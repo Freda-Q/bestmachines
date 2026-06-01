@@ -1,0 +1,71 @@
+---
+import SectionIntro from "./SectionIntro.astro";
+
+const applications = [
+  {
+    title: "Packaging & Closures",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663387716019/V4ZdDXX97fYCoS4pbyWrL4/bestmachines_application_packaging-nEYPHTN94jyBN4mFYmoWh8.webp",
+    alt: "PET preforms, caps and transparent containers for injection molding applications",
+    items: "PET preforms, bottle caps, transparent containers and closure components.",
+    value: "High-speed, stable output for beverage, food and packaging supply chains.",
+  },
+  {
+    title: "Daily Consumer Goods",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663387716019/V4ZdDXX97fYCoS4pbyWrL4/bestmachines_application_daily_goods-EBqne7hLEHvXQQH8AfYKwo.webp",
+    alt: "Injection molded baskets, basins, stools and daily-use plastic products",
+    items: "Storage baskets, basins, stools, thin-wall containers and household parts.",
+    value: "Flexible molding solutions for multiple shapes, colors and mold configurations.",
+  },
+  {
+    title: "Industrial Logistics",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663387716019/V4ZdDXX97fYCoS4pbyWrL4/bestmachines_application_logistics-jtAxFBQx9mUyUSTbiUv9nj.webp",
+    alt: "Plastic pallets, logistics crates and thick-wall industrial molded parts",
+    items: "Pallets, crates, tool boxes, drums and heavy-duty logistics components.",
+    value: "Suitable for large-format, thick-wall and durable industrial products.",
+  },
+  {
+    title: "Medical Consumables",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663387716019/V4ZdDXX97fYCoS4pbyWrL4/bestmachines_application_medical-54grcozjDHqGKqCMzqtMfM.webp",
+    alt: "Transparent medical consumables and precision injection molded components",
+    items: "Syringes, transparent precision parts, laboratory tubes and clean plastic components.",
+    value: "Repeatable molding performance for transparent and precision applications.",
+  },
+  {
+    title: "Construction Materials",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663387716019/V4ZdDXX97fYCoS4pbyWrL4/bestmachines_application_construction-7YJuXec5QMnpXJLjqQBEYn.webp",
+    alt: "Plastic pipe fittings, profile connectors and engineering plastic parts",
+    items: "Pipe fittings, profile connectors, brackets and engineering plastic components.",
+    value: "Stable forming for structural strength, dimensional control and long service life.",
+  },
+];
+---
+
+<section id="applications" class="applications-section">
+  <SectionIntro
+    eyebrow="Applications"
+    title="Clear visual application fields for injection molding production."
+    text="Instead of a busy collage, each application is presented with a consistent image, concise product scope and practical production value, so buyers can quickly match their own products with the right machine configuration."
+  />
+  <div class="application-grid application-grid-images">
+    {
+      applications.map((app, index) => (
+        <article class="application-card application-card-image">
+          <div class="application-photo">
+            <img src={app.image} alt={app.alt} />
+            <span>0{index + 1}</span>
+          </div>
+          <div class="application-body">
+            <h3>{app.title}</h3>
+            <p>{app.items}</p>
+            <strong>{app.value}</strong>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

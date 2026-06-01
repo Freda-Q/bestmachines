@@ -1,0 +1,41 @@
+---
+import SectionIntro from "./SectionIntro.astro";
+
+const productLines = [
+  {
+    title: "Horizontal Injection Molding Machines",
+    range: "For multi-category plastic products",
+    text: "Built for PET preforms, caps, household products, medical consumables, logistics parts and construction components, with a focus on stable cycles and continuous output.",
+  },
+  {
+    title: "Mold & Process Coordination",
+    range: "Machine selection, mold matching and trial support",
+    text: "We coordinate equipment configuration with product structure, mold size and output targets to reduce project communication costs and accelerate commissioning.",
+  },
+  {
+    title: "Turnkey Delivery & Service Support",
+    range: "From inquiry to long-term maintenance",
+    text: "Our service approach covers technical consultation, machine configuration, on-site commissioning, spare parts and after-sales response for export and domestic customers.",
+  },
+];
+---
+
+<section id="product" class="product-section">
+  <SectionIntro
+    eyebrow="Machine Capability"
+    title="Injection molding equipment connected with molds, processes and delivery support."
+    text="The homepage now presents what international buyers need to evaluate first: production range, application fit, project support and long-term reliability."
+  />
+  <div class="product-grid">
+    {
+      productLines.map((item, index) => (
+        <article class="product-card">
+          <span class="card-number">0{index + 1}</span>
+          <h3>{item.title}</h3>
+          <strong>{item.range}</strong>
+          <p>{item.text}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>

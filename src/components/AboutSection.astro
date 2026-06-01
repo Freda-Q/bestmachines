@@ -1,0 +1,101 @@
+---
+import { CircleCheck, Factory, Play, Ruler, ShieldCheck, Zap } from "@lucide/astro";
+
+const factoryImage =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663387716019/V4ZdDXX97fYCoS4pbyWrL4/bestmachines_factory_capability-JDFAPLbeQPuiWBCHPTUdYM.webp";
+const textureImage =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663387716019/V4ZdDXX97fYCoS4pbyWrL4/bestmachines_technical_texture-hrHABS5rQbaTE6RzUeW6Hn.webp";
+
+const capabilities = [
+  {
+    icon: Zap,
+    title: "Stable Efficiency",
+    text: "Optimized for continuous molding, energy consumption, cycle consistency and reliable operation.",
+  },
+  {
+    icon: Ruler,
+    title: "Precise Matching",
+    text: "Machine recommendations are aligned with product structure, mold dimensions and capacity targets.",
+  },
+  {
+    icon: Factory,
+    title: "Manufacturing Foundation",
+    text: "R&D, production, assembly and commissioning work together to support customized delivery.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Quality Credentials",
+    text: "The company has built a quality foundation with CE, TUV and 3A enterprise credentials.",
+  },
+];
+---
+
+<section
+  id="capability"
+  class="capability-section"
+  style={`background-image: linear-gradient(120deg, rgba(6, 25, 52, .94), rgba(8, 49, 92, .88)), url(${textureImage})`}
+>
+  <div class="capability-copy">
+    <span>Manufacturing & Service</span>
+    <h2>Engineering capability that supports stable machines and practical project delivery.</h2>
+    <p>
+      BEST Machine continues to invest in plastics packaging machinery fields, upgrade technical
+      experience, and build a coordinated service base across R&D, design, manufacturing, assembly
+      and after-sales support.
+    </p>
+  </div>
+  <div class="capability-grid">
+    {
+      capabilities.map((item) => {
+        const Icon = item.icon;
+        return (
+          <article>
+            <div><Icon class="h-5 w-5" /></div>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        );
+      })
+    }
+  </div>
+</section>
+
+<section class="factory-section">
+  <div class="factory-visual">
+    <img src={factoryImage} alt="BEST Machine factory and manufacturing capability" />
+  </div>
+  <div class="factory-copy">
+    <span>About BEST Machine</span>
+    <h2>Focused on plastic machinery and molds for multi-industry plastic product manufacturing.</h2>
+    <p>
+      Zhangjiagang Best Machinery Co., Ltd. specializes in the R&D, production and manufacturing of
+      plastic machinery and molds. With more than RMB 30 million in fixed assets and 19 years of
+      continuous development, the company supports customers with practical machinery, mold and
+      process solutions.
+    </p>
+    <div class="factory-list">
+      <div><CircleCheck class="h-5 w-5" /> Coordinated engineering, design and production teams</div>
+      <div><CircleCheck class="h-5 w-5" /> Support for machine, mold and process matching</div>
+      <div><CircleCheck class="h-5 w-5" /> Export-oriented communication and service workflow</div>
+    </div>
+  </div>
+</section>
+
+<section id="video" class="video-section">
+  <div class="video-panel">
+    <div class="play-circle"><Play class="h-7 w-7" fill="currentColor" /></div>
+    <div>
+      <span>Machine Video</span>
+      <h2>Use this section for real mold trials, factory walkthroughs and product sample videos.</h2>
+      <p>
+        This area is designed as a clear video entry. Replacing it with real machine footage will
+        help overseas buyers evaluate operating stability before inquiry.
+      </p>
+    </div>
+  </div>
+  <a
+    class="secondary-link"
+    href="/contact#inquiry-form"
+    >Request Video</a
+  >
+</section>
